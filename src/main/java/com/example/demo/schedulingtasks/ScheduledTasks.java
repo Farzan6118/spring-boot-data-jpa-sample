@@ -40,7 +40,7 @@ public class ScheduledTasks {
         this.roleRepository = roleRepository;
     }
 
-    @Scheduled(cron = "0 * * * * *")
+//    @Scheduled(cron = "0 * * * * *")
     public void reportCurrenTime() {
         int recordLength = 10;
 
