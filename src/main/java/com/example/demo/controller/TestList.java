@@ -11,6 +11,11 @@ import java.util.List;
 @RequestMapping("api/v1/list")
 public class TestList {
 
+    @GetMapping("ping")
+    public ResponseEntity<String> listOfInformation() {
+        return ResponseEntity.ok("pong");
+    }
+
     @GetMapping("one-to-ten")
     public ResponseEntity<List<String>> listOneTowTen() {
         return ResponseEntity.ok(List.of("one two three four five six seven eight nine ten".split(" ")));

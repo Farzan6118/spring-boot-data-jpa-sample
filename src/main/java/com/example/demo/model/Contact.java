@@ -1,26 +1,24 @@
 package com.example.demo.model;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @Entity
-@NoArgsConstructor
-public class Contact {
+@Table(name = "contacts")
+public class Contact extends GeneralInfo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    private String address;
+    private Long contactId;
     private String phoneNumber;
+    private String cellphoneNumber;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+    @OneToMany(mappedBy = "contact")
+    private Set<Address> addresses;
 
-    public Contact(String address, String phoneNumber) {
-        this.address = address;
-        this.phoneNumber = phoneNumber;
-    }
 }

@@ -1,26 +1,21 @@
 package com.example.demo.model;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @Entity
-@NoArgsConstructor
-public class Role {
+@Table(name = "roles")
+public class Role extends GeneralInfo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long roleId;
     private String name;
     private String levelNumber;
-
-    public Role(String name, String levelNumber) {
-        this.name = name;
-        this.levelNumber = levelNumber;
-    }
+    @OneToMany(mappedBy = "role")
+    private Set<User> users;
+    private String permissionString;
 }

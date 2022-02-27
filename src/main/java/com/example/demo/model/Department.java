@@ -1,26 +1,24 @@
 package com.example.demo.model;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @Entity
-@NoArgsConstructor
-public class Department {
+@Table(name = "departments")
+public class Department extends GeneralInfo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    private String name;
-    private String location;
-
-    public Department(String name, String location) {
-        this.name = name;
-        this.location = location;
-    }
+    private Long departmentId;
+    private String depName;
+    private String depFloor;
+    private String depCode;
+    @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
+    private Set<User> users;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id")
+    private Address address;
 }
