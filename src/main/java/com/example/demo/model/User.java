@@ -1,6 +1,8 @@
 package com.example.demo.model;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -8,6 +10,8 @@ import java.util.Set;
 
 @Data
 @Entity
+@Builder
+@NoArgsConstructor
 @Table(name = "users")
 public class User extends GeneralInfo {
 

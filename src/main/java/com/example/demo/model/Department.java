@@ -1,12 +1,16 @@
 package com.example.demo.model;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Data
 @Entity
+@Builder
+@NoArgsConstructor
 @Table(name = "departments")
 public class Department extends GeneralInfo {
 
