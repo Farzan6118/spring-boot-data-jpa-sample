@@ -13,12 +13,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @RequiredArgsConstructor
 public class DemoApplication implements CommandLineRunner {
 
-    private AddressRepository addressRepository;
-    private ContactRepository contactRepository;
-    private DepartmentRepository departmentRepository;
-    private RoleRepository roleRepository;
-    private UserRepository userRepository;
-
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
     }

@@ -1,15 +1,15 @@
 package com.example.demo.model;
 
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Builder
+@AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "addresses")
 public class Address extends GeneralInfo {

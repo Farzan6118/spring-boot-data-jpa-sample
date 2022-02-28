@@ -1,16 +1,16 @@
 package com.example.demo.model;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Builder
+@AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "users")
 public class User extends GeneralInfo {
