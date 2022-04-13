@@ -1,1 +1,1 @@
-# spring boot data-jpa sample with relations
+# spring boot dataJPA with some relations
