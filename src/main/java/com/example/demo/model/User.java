@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
-import java.util.Set;
 
 @Getter
 @Setter
@@ -22,14 +21,14 @@ public class User extends GeneralInfo {
     private String lastName;
     private LocalDateTime birthDate;
     private String nationalNumber;
-    @OneToMany(mappedBy = "user")
-    @Column(name = "contact_address")
-    private Set<Contact> contacts;
-    @ManyToOne
-    @JoinColumn(name = "role_id")
-    private Role role;
-    @ManyToOne
-    @JoinColumn(name = "department_id")
-    private Department department;
+//    @OneToMany(mappedBy = "user")
+//    @Column(name = "contact_address")
+//    private Set<Contact> contacts;
+//    @ManyToOne
+//    @JoinColumn(name = "role_id")
+//    private Role role;
+//    @ManyToOne
+//    @JoinColumn(name = "department_id")
+//    private Department department;
 
 }

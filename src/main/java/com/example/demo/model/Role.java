@@ -3,8 +3,6 @@ package com.example.demo.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Set;
-
 @Getter
 @Setter
 @Entity
@@ -19,7 +17,7 @@ public class Role extends GeneralInfo {
     private Long roleId;
     private String name;
     private String levelNumber;
-    @OneToMany(mappedBy = "role")
-    private Set<User> users;
+    //    @OneToMany(mappedBy = "role")
+//    private Set<User> users;
     private String permissionString;
 }

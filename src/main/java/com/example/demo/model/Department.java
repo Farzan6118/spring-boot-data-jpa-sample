@@ -3,15 +3,13 @@ package com.example.demo.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Set;
-
 @Getter
 @Setter
 @Entity
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "departments")
+@Table
 public class Department extends GeneralInfo {
 
     @Id
@@ -20,9 +18,9 @@ public class Department extends GeneralInfo {
     private String depName;
     private String depFloor;
     private String depCode;
-    @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
-    private Set<User> users;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "address_id")
-    private Address address;
+//    @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
+//    private Set<User> users;
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "address_id")
+//    private Address address;
 }
