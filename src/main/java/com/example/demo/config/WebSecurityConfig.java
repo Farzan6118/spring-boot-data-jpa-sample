@@ -37,7 +37,12 @@ public class WebSecurityConfig {
     @Bean
     public UserDetailsService userDetailsService(PasswordEncoder encoder) {
         List<UserDetails> userDetails = new ArrayList<>();
-        userDetails.add(new User("farzan", encoder.encode("pass"), List.of(new SimpleGrantedAuthority("ROLE_USER"))));
+        userDetails.add(
+                new User("farzan", encoder.encode("pass"),
+                        List.of(new SimpleGrantedAuthority("ROLE_USER"))));
+        userDetails.add(
+                new User("manager", encoder.encode("password"),
+                        List.of(new SimpleGrantedAuthority("MANAGER"))));
         return new InMemoryUserDetailsManager(userDetails);
     }
 
